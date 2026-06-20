@@ -1,0 +1,253 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+    background: #f0f2f5;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.container {
+    background: white;
+    border-radius: 16px;
+    padding: 40px;
+    max-width: 800px;
+    width: 100%;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+}
+
+.logo {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.logo h1 {
+    color: #00a884;
+    font-size: 28px;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+}
+
+.logo h1 span {
+    color: #333;
+}
+
+.credentials {
+    margin-bottom: 20px;
+}
+
+.credential-row {
+    display: flex;
+    align-items: center;
+    padding: 8px 0;
+    border-bottom: 1px solid #e8edf2;
+}
+
+.credential-row:last-child {
+    border-bottom: none;
+}
+
+.credential-label {
+    font-size: 15px;
+    color: #333;
+    font-weight: 500;
+    min-width: 140px;
+}
+
+.credential-input {
+    flex: 1;
+    padding: 10px 14px;
+    border: 1px solid #d1d5db;
+    border-radius: 6px;
+    font-size: 14px;
+    background: white;
+    transition: border-color 0.2s;
+    font-family: 'Courier New', monospace;
+}
+
+.credential-input:focus {
+    outline: none;
+    border-color: #00a884;
+    box-shadow: 0 0 0 3px rgba(0, 168, 132, 0.1);
+}
+
+.credential-input::placeholder {
+    color: #b0b8c4;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+}
+
+.response-section {
+    margin: 20px 0 25px 0;
+}
+
+.response-label {
+    font-size: 15px;
+    color: #333;
+    font-weight: 500;
+    margin-bottom: 8px;
+    display: block;
+}
+
+.response-output {
+    width: 100%;
+    min-height: 160px;
+    padding: 14px 16px;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    font-family: 'Courier New', monospace;
+    font-size: 13px;
+    background: #fafbfc;
+    color: #1a1a1a;
+    resize: vertical;
+    transition: border-color 0.2s;
+    line-height: 1.6;
+}
+
+.response-output:focus {
+    outline: none;
+    border-color: #00a884;
+}
+
+.response-output:disabled {
+    background: #f8f9fa;
+}
+
+.method-section {
+    border: 1px solid #e8edf2;
+    border-radius: 8px;
+    padding: 15px 18px;
+    margin-bottom: 12px;
+}
+
+.method-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.method-name {
+    font-size: 15px;
+    font-weight: 600;
+    color: #00a884;
+}
+
+.btn-method {
+    padding: 8px 24px;
+    border: none;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s;
+    background: #00a884;
+    color: white;
+}
+
+.btn-method:hover {
+    background: #008069;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(0, 168, 132, 0.25);
+}
+
+.btn-method:active {
+    transform: translateY(0);
+}
+
+.method-fields {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.method-field {
+    flex: 1;
+    min-width: 150px;
+}
+
+.method-field label {
+    display: block;
+    font-size: 12px;
+    color: #8e9aaf;
+    font-weight: 500;
+    margin-bottom: 3px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.method-field input {
+    width: 100%;
+    padding: 8px 12px;
+    border: 1px solid #d1d5db;
+    border-radius: 6px;
+    font-size: 14px;
+    background: white;
+    transition: border-color 0.2s;
+}
+
+.method-field input:focus {
+    outline: none;
+    border-color: #00a884;
+    box-shadow: 0 0 0 3px rgba(0, 168, 132, 0.1);
+}
+
+.method-field input::placeholder {
+    color: #b0b8c4;
+    font-size: 13px;
+}
+
+.footer {
+    text-align: center;
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid #e8edf2;
+    color: #8e9aaf;
+    font-size: 13px;
+}
+
+@media (max-width: 600px) {
+    .container {
+        padding: 20px;
+    }
+
+    .credential-row {
+        flex-direction: column;
+        align-items: stretch;
+        padding: 10px 0;
+    }
+
+    .credential-label {
+        min-width: auto;
+        margin-bottom: 4px;
+        font-size: 13px;
+    }
+
+    .method-header {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 8px;
+    }
+
+    .method-fields {
+        flex-direction: column;
+    }
+
+    .method-field {
+        min-width: auto;
+    }
+
+    .btn-method {
+        width: 100%;
+    }
+
+    .logo h1 {
+        font-size: 22px;
+    }
+}
