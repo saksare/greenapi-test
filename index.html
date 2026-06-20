@@ -13,66 +13,72 @@
             <h1>GREEN <span>API</span></h1>
         </div>
 
-        <div class="credentials">
-            <div class="credential-row">
-                <span class="credential-label">idInstance</span>
-                <input type="text" class="credential-input" id="idInstance" placeholder="Enter idInstance">
-            </div>
-            <div class="credential-row">
-                <span class="credential-label">ApiTokenInstance</span>
-                <input type="text" class="credential-input" id="apiToken" placeholder="Enter ApiTokenInstance">
-            </div>
-        </div>
-
-        <div class="response-section">
-            <label class="response-label">Response:</label>
-            <textarea class="response-output" id="responseOutput" readonly placeholder="API response will appear here..."></textarea>
-        </div>
-
-        <div class="method-section">
-            <div class="method-header">
-                <span class="method-name">getSettings</span>
-                <button class="btn-method" onclick="callGetSettings()">Execute</button>
-            </div>
-        </div>
-
-        <div class="method-section">
-            <div class="method-header">
-                <span class="method-name">getStateInstance</span>
-                <button class="btn-method" onclick="callGetStateInstance()">Execute</button>
-            </div>
-        </div>
-
-        <div class="method-section">
-            <div class="method-header">
-                <span class="method-name">sendMessage</span>
-                <button class="btn-method" onclick="callSendMessage()">Execute</button>
-            </div>
-            <div class="method-fields">
-                <div class="method-field">
-                    <label>Phone Number</label>
-                    <input type="text" id="msgPhone" placeholder="7777234567">
+        <div class="main-layout">
+            <div class="left-panel">
+                <div class="credentials">
+                    <div class="credential-row">
+                        <span class="credential-label">idInstance</span>
+                        <input type="text" class="credential-input" id="idInstance" placeholder="Enter idInstance">
+                    </div>
+                    <div class="credential-row">
+                        <span class="credential-label">ApiTokenInstance</span>
+                        <input type="text" class="credential-input" id="apiToken" placeholder="Enter ApiTokenInstance">
+                    </div>
                 </div>
-                <div class="method-field">
-                    <label>Message</label>
-                    <input type="text" id="msgText" placeholder="Hello Gmail!">
-                </div>
-            </div>
-        </div>
 
-        <div class="method-section">
-            <div class="method-header">
-                <span class="method-name">sendFileByUrl</span>
-                <button class="btn-method" onclick="callSendFileByUrl()">Execute</button>
-            </div>
-            <div class="method-fields">
-                <div class="method-field">
-                    <label>Phone Number</label>
-                    <input type="text" id="filePhone" placeholder="7777234567">
+                <div class="method-section">
+                    <div class="method-header">
+                        <span class="method-name">getSettings</span>
+                        <button class="btn-method" onclick="callGetSettings()">Execute</button>
+                    </div>
                 </div>
-                <div class="method-field">
-                    <label>File URL</label>
-                    <input type="text" id="fileUrl" placeholder="https://my.site.com/my/horse.png">
+
+                <div class="method-section">
+                    <div class="method-header">
+                        <span class="method-name">getStateInstance</span>
+                        <button class="btn-method" onclick="callGetStateInstance()">Execute</button>
+                    </div>
+                </div>
+
+                <div class="method-section">
+                    <div class="method-header">
+                        <span class="method-name">sendMessage</span>
+                        <button class="btn-method" onclick="callSendMessage()">Execute</button>
+                    </div>
+                    <div class="method-fields">
+                        <div class="method-field">
+                            <label>Phone Number</label>
+                            <input type="text" id="msgPhone" placeholder="7777234567">
+                        </div>
+                        <div class="method-field">
+                            <label>Message</label>
+                            <input type="text" id="msgText" placeholder="Hello Gmail!">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="method-section">
+                    <div class="method-header">
+                        <span class="method-name">sendFileByUrl</span>
+                        <button class="btn-method" onclick="callSendFileByUrl()">Execute</button>
+                    </div>
+                    <div class="method-fields">
+                        <div class="method-field">
+                            <label>Phone Number</label>
+                            <input type="text" id="filePhone" placeholder="7777234567">
+                        </div>
+                        <div class="method-field">
+                            <label>File URL</label>
+                            <input type="text" id="fileUrl" placeholder="https://my.site.com/my/horse.png">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="right-panel">
+                <div class="response-section">
+                    <label class="response-label">Response:</label>
+                    <textarea class="response-output" id="responseOutput" readonly placeholder="API response will appear here..."></textarea>
                 </div>
             </div>
         </div>
