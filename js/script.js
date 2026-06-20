@@ -39,6 +39,27 @@ async function callAPI(endpoint, method, body) {
     }
 }
 
+function formatPhoneNumber(phone) {
+    // Remove all non-numeric characters except + (keep + for country code detection)
+    let cleaned = phone.replace(/[\s\-\(\)]/g, '');
+    
+    // If number starts with +, remove it
+    if (cleaned.startsWith('+')) {
+        cleaned = cleaned.substring(1);
+    }
+    
+    // If number starts with 00, remove it (international format alternative)
+    if (cleaned.startsWith('00')) {
+        cleaned = cleaned.substring(2);
+    }
+    
+    // Remove any remaining non-numeric characters
+    cleaned = cleaned.replace(/[^0-9]/g, '');
+    
+    // Add @c.us
+    return cleaned + '@c.us';
+}
+
 function callGetSettings() {
     callAPI('getSettings', 'GET', null);
 }
@@ -61,7 +82,11 @@ function callSendMessage() {
         return;
     }
 
-    const formattedChatId = phone.includes('@c.us') ? phone : phone + '@c.us';
+    const formattedChatId = formatPhoneNumber(phone);
+
+    console.log('Original:', phone);
+    console.log('Formatted:', formattedChatId);
+    console.log('Message:', message);
 
     const body = {
         chatId: formattedChatId,
@@ -85,7 +110,11 @@ function callSendFileByUrl() {
         return;
     }
 
-    const formattedChatId = phone.includes('@c.us') ? phone : phone + '@c.us';
+    const formattedChatId = formatPhoneNumber(phone);
+
+    console.log('Original:', phone);
+    console.log('Formatted:', formattedChatId);
+    console.log('File URL:', fileUrl);
 
     const body = {
         chatId: formattedChatId,
