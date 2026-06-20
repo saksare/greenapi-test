@@ -17,15 +17,15 @@ body {
 .container {
     background: white;
     border-radius: 16px;
-    padding: 40px;
-    max-width: 800px;
+    padding: 30px;
+    max-width: 1100px;
     width: 100%;
     box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
 }
 
 .logo {
     text-align: center;
-    margin-bottom: 30px;
+    margin-bottom: 25px;
 }
 
 .logo h1 {
@@ -37,6 +37,21 @@ body {
 
 .logo h1 span {
     color: #333;
+}
+
+.main-layout {
+    display: flex;
+    gap: 25px;
+}
+
+.left-panel {
+    flex: 0 0 48%;
+    max-width: 48%;
+}
+
+.right-panel {
+    flex: 1;
+    min-width: 0;
 }
 
 .credentials {
@@ -58,7 +73,7 @@ body {
     font-size: 15px;
     color: #333;
     font-weight: 500;
-    min-width: 140px;
+    min-width: 130px;
 }
 
 .credential-input {
@@ -84,7 +99,9 @@ body {
 }
 
 .response-section {
-    margin: 20px 0 25px 0;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
 }
 
 .response-label {
@@ -97,7 +114,8 @@ body {
 
 .response-output {
     width: 100%;
-    min-height: 160px;
+    flex: 1;
+    min-height: 500px;
     padding: 14px 16px;
     border: 1px solid #d1d5db;
     border-radius: 8px;
@@ -122,15 +140,14 @@ body {
 .method-section {
     border: 1px solid #e8edf2;
     border-radius: 8px;
-    padding: 15px 18px;
-    margin-bottom: 12px;
+    padding: 12px 16px;
+    margin-bottom: 10px;
 }
 
 .method-header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin-bottom: 10px;
 }
 
 .method-name {
@@ -140,7 +157,7 @@ body {
 }
 
 .btn-method {
-    padding: 8px 24px;
+    padding: 7px 22px;
     border: none;
     border-radius: 6px;
     font-size: 14px;
@@ -149,6 +166,7 @@ body {
     transition: all 0.2s;
     background: #00a884;
     color: white;
+    white-space: nowrap;
 }
 
 .btn-method:hover {
@@ -165,11 +183,12 @@ body {
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
+    margin-top: 10px;
 }
 
 .method-field {
     flex: 1;
-    min-width: 150px;
+    min-width: 120px;
 }
 
 .method-field label {
@@ -184,7 +203,7 @@ body {
 
 .method-field input {
     width: 100%;
-    padding: 8px 12px;
+    padding: 7px 10px;
     border: 1px solid #d1d5db;
     border-radius: 6px;
     font-size: 14px;
@@ -205,14 +224,31 @@ body {
 
 .footer {
     text-align: center;
-    margin-top: 30px;
-    padding-top: 20px;
+    margin-top: 25px;
+    padding-top: 18px;
     border-top: 1px solid #e8edf2;
     color: #8e9aaf;
     font-size: 13px;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 800px) {
+    .main-layout {
+        flex-direction: column;
+    }
+
+    .left-panel {
+        flex: 1;
+        max-width: 100%;
+    }
+
+    .right-panel {
+        flex: 1;
+    }
+
+    .response-output {
+        min-height: 250px;
+    }
+
     .container {
         padding: 20px;
     }
@@ -249,5 +285,15 @@ body {
 
     .logo h1 {
         font-size: 22px;
+    }
+}
+
+@media (max-width: 500px) {
+    .container {
+        padding: 15px;
+    }
+
+    .response-output {
+        min-height: 200px;
     }
 }
