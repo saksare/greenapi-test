@@ -10,7 +10,7 @@ body {
     min-height: 100vh;
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
     padding: 20px;
 }
 
@@ -18,7 +18,7 @@ body {
     background: white;
     border-radius: 16px;
     padding: 30px;
-    max-width: 1100px;
+    max-width: 1200px;
     width: 100%;
     box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
 }
@@ -41,17 +41,20 @@ body {
 
 .main-layout {
     display: flex;
-    gap: 25px;
+    gap: 30px;
+    align-items: stretch;
 }
 
 .left-panel {
-    flex: 0 0 48%;
-    max-width: 48%;
+    flex: 0 0 45%;
+    min-width: 0;
 }
 
 .right-panel {
     flex: 1;
     min-width: 0;
+    display: flex;
+    flex-direction: column;
 }
 
 .credentials {
@@ -99,9 +102,9 @@ body {
 }
 
 .response-section {
-    height: 100%;
     display: flex;
     flex-direction: column;
+    height: 100%;
 }
 
 .response-label {
@@ -115,7 +118,7 @@ body {
 .response-output {
     width: 100%;
     flex: 1;
-    min-height: 500px;
+    min-height: 550px;
     padding: 14px 16px;
     border: 1px solid #d1d5db;
     border-radius: 8px;
@@ -231,7 +234,7 @@ body {
     font-size: 13px;
 }
 
-@media (max-width: 800px) {
+@media (max-width: 850px) {
     .main-layout {
         flex-direction: column;
     }
